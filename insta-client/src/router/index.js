@@ -44,6 +44,10 @@ const router = new VueRouter({
   routes
 });
 
+router.onReady(() => {
+  store.commit('isAuthenticated');
+});
+
 router.beforeEach((to, from, next) => {
   store.commit('isAuthenticated');
   if (to.matched.some(record => record.meta.requiresAuth)) {

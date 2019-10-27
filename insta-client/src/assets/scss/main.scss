@@ -1,14 +1,19 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #black;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  background-color: #f7f7f7;
+  font-family: 'Roboto', Helvetica, sans-serif;
 }
 
 #app {
   width: 100vw;
   height: 100vh;
 }
+
+//PAGES
+
+//COMPOENTS
+@import './components/Header.scss';
 
 .form-group {
   flex: 1;
@@ -58,5 +63,5 @@ body {
   }
 }
 
-@import 'pages/login.scss';
-@import 'pages/register.scss';
+@import './pages/login.scss';
+@import './pages/register.scss';

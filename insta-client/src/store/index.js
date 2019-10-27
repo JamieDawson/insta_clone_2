@@ -10,8 +10,21 @@ export default new Vuex.Store({
   },
   mutations: {
     isAuthenticated(state) {
-      if (localStorage.getItem('jwt') != null) state.isAuthenticated = true;
-      else state.isAuthenticated = false;
+      if (localStorage.getItem('jwt') != null) {
+        state.isAuthenticated = true;
+      } else {
+        state.isAuthenticated = false;
+      }
+    },
+    login(state, token) {
+      state.isAuthenticated = true;
+      localStorage.setItem('jwt', token);
+      this.$router.push('/');
+    },
+    logout(state) {
+      state.isAuthenticated = false;
+      localStorage.removeItem('jwt');
+      this.$router.push('/login');
     }
   }
 });
