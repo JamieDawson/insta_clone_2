@@ -1,7 +1,9 @@
 <template>
   <div class="home">
-    Hello, World!
-    <button @click="logout">Logout</button>
+    <main class="feed">
+      Hello, World!
+      <button @click="logout">Logout</button>
+    </main>
   </div>
 </template>
 
