@@ -1,14 +1,16 @@
 <template>
-  <div class="home">
-    <main class="feed">
-      Hello, World!
-      <button @click="logout">Logout</button>
-    </main>
-  </div>
+  <main class="feed">
+    <button @click="logout">Logout</button>
+  </main>
 </template>
 
 <script>
 export default {
+  // computed: {
+  //   feed () {
+  //     return this.$store.state.feed;
+  //   }
+  // }
   methods: {
     logout() {
       this.$store.commit("logout");
