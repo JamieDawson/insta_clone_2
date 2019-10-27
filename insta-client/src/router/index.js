@@ -5,6 +5,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import store from '../store/index.js';
 import Login from '../views/Login.vue';
 import Register from '../views/Register.vue';
 
@@ -44,6 +45,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  store.commit('isAuthenticated');
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (localStorage.getItem('jwt') == null) {
       next({
