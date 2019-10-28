@@ -10,6 +10,7 @@
           <strong>{{post.display_name }}:</strong>
           {{ post.desc }}
         </p>
+        <p class="timestamp">{{timestampToDate(post.timestamp)}}</p>
       </footer>
     </article>
 
@@ -27,6 +28,19 @@ export default {
   methods: {
     logout() {
       this.$store.commit("logout");
+    },
+    timestampToDate(timestamp) {
+      let d = new Date(timestamp);
+      let year = d.getFullYear();
+      let month = d.getMonth() + 1;
+      if (month < 10) {
+        month = "0" + month;
+      }
+      let day = d.getDay();
+      if (day < 10) {
+        day = "0" + day;
+      }
+      return day + "/" + month + "/" + year;
     }
   }
 };
