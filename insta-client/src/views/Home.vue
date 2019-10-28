@@ -5,7 +5,12 @@
       <section class="post-picture">
         <img :src="post.image" :alt="post.desc" class="post-image" />
       </section>
-      <footer class="post-desc">{{post.display_name + ': ' + post.desc}}</footer>
+      <footer class="post-desc">
+        <p>
+          <strong>{{post.display_name }}:</strong>
+          {{ post.desc }}
+        </p>
+      </footer>
     </article>
 
     <button @click="logout">Logout</button>
