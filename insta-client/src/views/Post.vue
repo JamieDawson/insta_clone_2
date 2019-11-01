@@ -1,20 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@JamieDawson 
-1
-00TylerPottsDev/instagram-clone
- Code Issues 0 Pull requests 0 Projects 0 Wiki Security Insights
-instagram-clone/instaclient/src/views/Post.vue
- Tyler Potts Instagram
-512cb0f on Apr 27
-93 lines (87 sloc)  2.52 KB
-  
 <template>
   <main class="view post">
     <section class="stream">
