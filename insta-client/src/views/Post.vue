@@ -1,7 +1,10 @@
 <template>
   <main class="view post">
     <section class="stream">
-      <video ref="video" id="video" width="100%" height="300" autoplay></video>
+      <video ref="video" id="video" width="100%" height="300" autoplay v-if="!captured"></video>
+    </section>
+    <section class="capture">
+      <canvas ref="canvas" id="canvas" width="100%" height="300" v-if="captured"></canvas>
     </section>
   </main>
 </template>
@@ -10,10 +13,13 @@
 export default {
   data() {
     return {
-      video: {}
+      video: {},
+      captured: false
     };
   },
-  methods: {},
+  methods: {
+    capture() {}
+  },
   mounted() {
     this.video = this.$refs.video; //links to vide ref up above.
     this.video.width = window.innerWidth;
