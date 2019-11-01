@@ -50,6 +50,7 @@ router.onReady(() => {
 
 router.beforeEach((to, from, next) => {
   store.commit('isAuthenticated');
+
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (localStorage.getItem('jwt') == null) {
       next({
