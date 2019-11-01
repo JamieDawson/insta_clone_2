@@ -10,6 +10,10 @@ body {
   height: 100vh;
 }
 
+main {
+  padding: 40px 0px;
+}
+
 //PAGES
 @import './pages/feed.scss';
 @import './pages/register.scss';
