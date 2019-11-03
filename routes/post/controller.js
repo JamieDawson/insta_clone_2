@@ -7,6 +7,11 @@ module.exports = {
     let user_id = jwt.decode(req.body.auth_token).id;
 
     userModel.findById(user_id).then(result => {
+      if (!result) {
+        res.send({ success: false, msg: 'No user was found' });
+        return;
+      }
+
       let newpost = new model({
         user_id: user_id,
         display_name: result.forename + ' ' + result.surname,
