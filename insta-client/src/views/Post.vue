@@ -100,3 +100,24 @@ export default {
   }
 };
 </script>
+
+
+<style lang="scss">
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.capture-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 65px;
+  transform: translateX(-50%);
+}
+.image {
+  width: 100%;
+  height: auto;
+}
+
+</style>
