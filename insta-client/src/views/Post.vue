@@ -73,7 +73,7 @@ export default {
   mounted() {
     this.video = this.$refs.video;
     this.video.width = window.innerWidth;
-    this.video.height = window.innerHeight - 80;
+    this.video.height = window.innerWidth;
     this.constraints = {
       width: window.innerWidth,
       height: window.innerWidth
@@ -109,7 +109,7 @@ export default {
 .hide {
   display: none;
 }
-.capture-btn {
+.post-btns {
   position: absolute;
   left: 50%;
   bottom: 65px;
@@ -119,5 +119,4 @@ export default {
   width: 100%;
   height: auto;
 }
-
 </style>
