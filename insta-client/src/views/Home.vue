@@ -30,6 +30,7 @@ export default {
       this.$store.commit("logout");
     },
     timestampToDate(timestamp) {
+      timestamp = new Number(timestamp);
       let d = new Date(timestamp);
       let year = d.getFullYear();
       let month = d.getMonth() + 1;
