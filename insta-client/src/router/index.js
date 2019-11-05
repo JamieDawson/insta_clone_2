@@ -6,6 +6,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Post from '../views/Post.vue';
+import Profile from '../views/Profile.vue';
 import store from '../store/index.js';
 import Login from '../views/Login.vue';
 import Register from '../views/Register.vue';
@@ -42,6 +43,14 @@ const routes = [
     path: '/newpost',
     name: 'post',
     component: Post,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: Profile,
     meta: {
       requiresAuth: true
     }
