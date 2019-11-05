@@ -18,9 +18,50 @@ export default {
       display_name: "",
       posts: []
     };
+  },
+  methods: {
+    getProfile() {
+      this.$http
+        .post(this.$store.state.api_url + "user/getprofile", {
+          auth_token: localStorage.getItem("jwt")
+        })
+        .then(({ data }) => {
+          this.display_name = data.display_name;
+          this.posts = data.details.posts;
+        });
+    }
+  },
+  beforeMount() {
+    this.getProfile();
   }
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.profile {
+  display: flex;
+  flex-direction: column;
+
+  .profile-head {
+    background: white;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: min-content;
+    grid-gap: 5px;
+
+    .post {
+      margin: 0;
+      padding: 0;
+      .post-image {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}
 </style>
