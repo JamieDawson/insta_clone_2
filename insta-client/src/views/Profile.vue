@@ -1,6 +1,6 @@
 <template>
   <main class="view profile">
-    <section class="profile-head">{{display_name}} Hello</section>
+    <section class="profile-head">{{display_name}}</section>
 
     <section class="posts">
       <div class="post" v-for="post in posts" :key="post._id">
